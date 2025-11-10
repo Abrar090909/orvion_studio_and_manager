@@ -1,0 +1,255 @@
+.landing-container {
+  text-align: center;
+  background-color: #000;
+  color: white;
+  overflow-x: hidden;
+}
+
+/* HERO SECTION */
+.hero {
+  height: 90vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 2rem;
+}
+
+.hero-text h1 {
+  font-size: 3.5rem;
+  font-weight: 800;
+  margin-bottom: 10px;
+}
+
+.hero-text p {
+  font-size: 1.2rem;
+  color: #aaa;
+}
+
+.glow-button {
+  display: inline-block;
+  margin-top: 1.5rem;
+  padding: 14px 40px;
+  border: 2px solid #a64bf4;
+  color: white;
+  border-radius: 30px;
+  text-decoration: none;
+  font-weight: 600;
+  box-shadow: 0 0 15px #a64bf4;
+  transition: all 0.3s ease;
+}
+
+.glow-button:hover {
+  background-color: #a64bf4;
+  box-shadow: 0 0 30px #a64bf4;
+}
+
+/* IMAGE BELOW HERO */
+.feature-section {
+  padding: 80px 20px;
+}
+
+.feature-section img {
+  width: 80%;
+  max-width: 1000px;
+  border-radius: 12px;
+  margin: 0 auto;
+  display: block;
+}
+
+/* HOW IT WORKS SECTION */
+.how-it-works {
+  text-align: center;
+  padding: 100px 20px;
+  background-color: #000;
+  color: #fff;
+}
+
+.how-it-works h2 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+.how-it-works .subtitle {
+  font-size: 1.3rem;
+  color: #aaa;
+  margin-bottom: 60px;
+}
+
+/* Container for steps */
+.steps {
+  position: relative;
+  width: 60%;
+  margin: 0 auto;
+  padding-left: 40px;
+  border-left: 2px solid #a64bf4; /* vertical connecting line */
+}
+
+/* Individual step block */
+.step {
+  position: relative;
+  text-align: left;
+  margin-bottom: 80px;
+}
+
+/* Circle for 1, 2, 3 */
+.step-number {
+  position: absolute;
+  left: -50px;
+  top: 0;
+  width: 40px;
+  height: 40px;
+  border: 2px solid #a64bf4;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  color: #fff;
+  font-size: 1.2rem;
+  background-color: #000;
+  box-shadow: 0 0 10px rgba(166, 75, 244, 0.5);
+}
+
+/* Step text */
+.step-content {
+  margin-left: 30px;
+}
+
+.step-content h3 {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+}
+
+.step-content p {
+  font-size: 1.1rem;
+  color: #b3b3b3;
+}
+
+/* remove bottom border line from last step */
+.step:last-child {
+  margin-bottom: 0;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .steps {
+    width: 85%;
+    padding-left: 25px;
+  }
+
+  .step {
+    margin-bottom: 60px;
+  }
+
+  .step-number {
+    width: 35px;
+    height: 35px;
+    left: -40px;
+    font-size: 1rem;
+  }
+
+  .step-content h3 {
+    font-size: 1.2rem;
+  }
+
+  .step-content p {
+    font-size: 0.95rem;
+  }
+}
+
+
+/* WHY ORVION SECTION */
+.why-orvion {
+  padding: 100px 20px;
+  text-align: center;
+}
+
+.why-orvion h2 {
+  font-size: 2.5rem;
+  margin-bottom: 60px;
+}
+
+.why-item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 60px auto;
+  gap: 2rem;
+  max-width: 1000px;
+}
+
+.why-item img {
+  width: 45%;
+  border-radius: 10px;
+}
+
+.why-text {
+  text-align: left;
+  width: 45%;
+}
+
+.why-text h3 {
+  font-size: 1.8rem;
+  margin-bottom: 10px;
+}
+
+.why-text p {
+  color: #aaa;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .why-item {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .why-item img, .why-text {
+    width: 100%;
+  }
+
+  .hero-text h1 {
+    font-size: 2.5rem;
+  }
+}
+/* FINAL PURPLE BANNER AT THE BOTTOM */
+.future-banner {
+  padding: 100px 20px 80px;
+  text-align: center;
+  color: #fff;
+  background: #000;
+}
+
+.future-banner h2 {
+  font-size: 2.4rem;
+  font-weight: 700;
+  margin-bottom: 40px;
+}
+
+.future-banner-image {
+  width: 85%;
+  max-width: 1200px;
+  margin: 0 auto;
+  border-radius: 18px;
+  overflow: hidden;
+}
+
+.future-banner-image img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 18px;
+  object-fit: cover;
+  box-shadow: none; /* no glow */
+  filter: brightness(0.97);
+}
+
+/* Responsive tweak */
+@media (max-width: 768px) {
+  .future-banner h2 {
+    font-size: 1.8rem;
+  }
+}

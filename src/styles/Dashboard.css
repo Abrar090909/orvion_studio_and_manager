@@ -1,0 +1,436 @@
+/* ===================== ORVION DASHBOARD REBUILD ===================== */
+
+/* ========== GLOBAL VARIABLES ========== */
+:root {
+  --bg: #0b0b0b;
+  --sidebar-bg: #0e0e0e;
+  --card-bg: #161616;
+  --text: #ffffff;
+  --text-muted: #b3b3b3;
+  --accent: #a64bf4;
+  --accent-light: #c083ff;
+  --success: #22c55e;
+  --info: #3b82f6;
+  --radius: 14px;
+  --shadow: 0 4px 25px rgba(0, 0, 0, 0.35);
+  --transition: all 0.3s ease;
+  font-family: "Inter", system-ui, sans-serif;
+}
+
+[data-theme="light"] {
+  --bg: #f6f7f9;
+  --sidebar-bg: #ffffff;
+  --card-bg: #ffffff;
+  --text: #0b0b0b;
+  --text-muted: #555;
+  --shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* ========== BODY ========== */
+body {
+  background: var(--bg);
+  color: var(--text);
+  transition: var(--transition);
+}
+
+/* ========== LAYOUT ========== */
+.dashboard-layout {
+  display: flex;
+  min-height: 100vh;
+}
+
+/* ========== SIDEBAR ========== */
+.sidebar {
+  width: 240px;
+  background: var(--sidebar-bg);
+  padding: 25px 18px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  box-shadow: inset -1px 0 0 rgba(255, 255, 255, 0.05);
+  transition: var(--transition);
+}
+
+.logo {
+  color: var(--accent);
+  font-weight: 800;
+  font-size: 22px;
+  margin-bottom: 35px;
+  text-align: center;
+}
+
+.sidebar nav {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.sidebar nav a {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 14px;
+  border-radius: 8px;
+  color: var(--text-muted);
+  font-weight: 500;
+  text-decoration: none;
+  transition: var(--transition);
+}
+
+.sidebar nav a:hover,
+.sidebar nav a.active {
+  background: rgba(166, 75, 244, 0.15);
+  color: var(--accent);
+  transform: translateX(4px);
+}
+
+/* Sidebar Sign Out Button */
+.signout-btn {
+  margin-top: 20px;
+  background: linear-gradient(90deg, var(--accent), var(--accent-light));
+  color: #fff;
+  border: none;
+  padding: 10px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: 0.3s;
+}
+
+.signout-btn:hover {
+  box-shadow: 0 0 20px rgba(166, 75, 244, 0.4);
+}
+
+/* ========== MAIN CONTENT ========== */
+.dashboard-main {
+  flex: 1;
+  padding: 30px 40px;
+  overflow-y: auto;
+  transition: var(--transition);
+}
+
+/* ========== NAVBAR ========== */
+.dashboard-navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 25px;
+}
+
+.dashboard-navbar h1 {
+  font-size: 26px;
+  font-weight: 700;
+}
+
+.navbar-right {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.navbar-right .icon {
+  font-size: 18px;
+  color: var(--text);
+  cursor: pointer;
+  opacity: 0.8;
+  transition: 0.3s ease;
+}
+
+.navbar-right .icon:hover {
+  color: var(--accent);
+  transform: scale(1.1);
+}
+
+/* ---------- STAT CARDS WITH MOTION ---------- */
+.stat-card {
+  background: var(--card-bg);
+  border-radius: var(--radius);
+  padding: 22px 20px;
+  box-shadow: var(--shadow);
+  transition: transform 0.3s ease, box-shadow 0.4s ease, background 0.3s ease;
+  cursor: pointer;
+  transform-style: preserve-3d;
+  perspective: 1000px;
+}
+
+.stat-card:hover {
+  transform: translateY(-6px) scale(1.03) rotateX(3deg);
+  box-shadow: 0 10px 25px rgba(166, 75, 244, 0.35);
+  background: linear-gradient(180deg, rgba(166, 75, 244, 0.08), var(--card-bg));
+}
+
+.stat-card h3 {
+  color: var(--text-muted);
+  font-size: 14px;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.stat-card h2 {
+  margin: 6px 0;
+  font-size: 26px;
+  font-weight: 700;
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.stat-card p {
+  font-size: 13px;
+  opacity: 0.9;
+  transition: opacity 0.3s ease;
+}
+
+.stat-card:hover h2 {
+  transform: translateY(-2px);
+  color: var(--accent-light);
+}
+
+.stat-card:hover h3,
+.stat-card:hover p {
+  opacity: 1;
+}
+/* ---------- GRID LAYOUT FOR STAT CARDS ---------- */
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 24px;
+  margin-bottom: 35px;
+  align-items: stretch;
+}
+
+
+/* ========== PROJECTS + ACTIONS SECTION ========== */
+.dashboard-sections {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 25px;
+}
+
+/* ---------- RECENT PROJECTS ---------- */
+.project-list {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.project-card {
+  background: var(--card-bg);
+  padding: 16px 18px;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.project-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 6px 22px rgba(166, 75, 244, 0.3);
+}
+
+.project-card h4 {
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: 8px;
+}
+
+.project-meta {
+  font-size: 13px;
+  color: var(--text-muted);
+  margin-bottom: 6px;
+}
+
+/* ---------- PROGRESS BAR STYLING ---------- */
+.progress-container {
+  position: relative;
+  background: #2c2c2c;
+  border-radius: 6px;
+  height: 8px;
+  overflow: hidden;
+  margin: 8px 0 14px 0;
+}
+
+.progress-bar {
+  background: linear-gradient(90deg, #a64bf4, #7a2ce0);
+  height: 100%;
+  border-radius: 6px;
+  width: var(--progress);
+  animation: fillProgress 1.4s ease-in-out forwards;
+}
+
+@keyframes fillProgress {
+  from {
+    width: 0;
+  }
+  to {
+    width: var(--progress);
+  }
+}
+
+
+.progress-percentage {
+  position: absolute;
+  right: 10px;
+  top: -20px;
+  font-size: 13px;
+  font-weight: 600;
+  color: #a64bf4; /* Bright purple for visibility */
+  text-shadow: 0 0 4px rgba(0, 0, 0, 0.6);
+  
+}
+
+.project-due {
+  font-size: 12px;
+  color: var(--text-muted);
+}
+
+/* ---------- VIEW ALL BUTTON ---------- */
+.view-all-container {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 10px;
+}
+
+.view-all-btn {
+  background: var(--accent-strong);
+  border: none;
+  color: #fff;
+  padding: 10px 18px;
+  border-radius: 8px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 0 10px rgba(166, 75, 244, 0.2);
+}
+
+.view-all-btn:hover {
+  background: var(--accent-light);
+  transform: translateY(-2px);
+  box-shadow: 0 0 20px rgba(166, 75, 244, 0.4);
+}
+
+
+/* ========== QUICK ACTIONS ========== */
+.quick-actions {
+  background: var(--card-bg);
+  border-radius: var(--radius);
+  padding: 25px;
+  box-shadow: var(--shadow);
+}
+
+.quick-actions h3 {
+  font-size: 18px;
+  margin-bottom: 8px;
+}
+
+.quick-actions .subtitle {
+  font-size: 14px;
+  color: var(--text-muted);
+  margin-bottom: 15px;
+}
+
+.action-btn {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: linear-gradient(90deg, rgba(166, 75, 244, 0.15), rgba(123, 61, 240, 0.1));
+  border: none;
+  color: var(--text);
+  padding: 12px;
+  border-radius: 8px;
+  margin-bottom: 10px;
+  font-weight: 600;
+  transition: var(--transition);
+  width: 100%;
+}
+
+.action-btn:hover {
+  background: linear-gradient(90deg, var(--accent), var(--accent-light));
+  color: #fff;
+  transform: translateY(-2px);
+  box-shadow: 0 0 20px rgba(166, 75, 244, 0.3);
+}
+
+/* ========== RECENT ACTIVITY ========== */
+.recent-activity {
+  margin-top: 30px;
+  background: var(--card-bg);
+  border-radius: var(--radius);
+  padding: 25px;
+  box-shadow: var(--shadow);
+}
+
+.recent-activity h3 {
+  font-size: 18px;
+  margin-bottom: 15px;
+}
+
+.activity-item {
+  border-left: 3px solid var(--accent);
+  padding-left: 12px;
+  margin-bottom: 14px;
+}
+
+.activity-item h4 {
+  margin: 0;
+  font-size: 15px;
+  color: var(--accent);
+}
+
+.activity-item p {
+  margin: 2px 0;
+  font-size: 13px;
+  color: var(--text-muted);
+}
+
+/* ========== THEME TOGGLE ========== */
+.theme-toggle {
+  background: none;
+  border: none;
+  color: var(--accent);
+  font-size: 20px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.theme-toggle:hover {
+  transform: rotate(20deg);
+}
+
+/* ========== SMOOTH ENTRANCE ANIMATION ========== */
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.signout-btn {
+  background: #a64bf4;
+  color: white;
+  border: none;
+  width: 100%;
+  padding: 10px 18px;
+  font-size: 14px;
+  font-weight: 500;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-top: 16px;
+  box-shadow: 0 0 12px rgba(166, 75, 244, 0.25);
+}
+
+.signout-btn:hover {
+  background: #7a2ce0;
+  box-shadow: 0 0 20px rgba(166, 75, 244, 0.4);
+  transform: translateY(-2px);
+}
+
+
+.stat-card,
+.recent-projects,
+.quick-actions,
+.recent-activity {
+  animation: fadeUp 0.6s ease forwards;
+}
