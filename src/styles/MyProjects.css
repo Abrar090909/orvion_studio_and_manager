@@ -1,0 +1,285 @@
+/* Scoped to only My Projects page */
+.my-projects-page {
+  display: flex;
+  background-color: #0b0b0d;
+  color: #fff;
+  min-height: 100vh;
+}
+
+.my-projects-page .my-projects-container {
+  flex: 1;
+  padding: 40px;
+  animation: fadeIn 0.6s ease;
+}
+
+.my-projects-page .page-title {
+  font-size: 1.8rem;
+  font-weight: 700;
+  margin-bottom: 30px;
+}
+
+/* === Stats Section === */
+.my-projects-page .stats-row {
+  display: flex;
+  gap: 25px;
+  margin-bottom: 30px;
+}
+
+.my-projects-page .stat-card {
+  background: #141416;
+  border-radius: 16px;
+  padding: 20px;
+  flex: 1;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 0 10px rgba(166, 75, 244, 0.15);
+  border: 1px solid #1f1f1f;
+  transition: 0.3s ease;
+}
+
+.my-projects-page .stat-card:hover {
+  box-shadow: 0 0 20px rgba(166, 75, 244, 0.4);
+  transform: translateY(-4px);
+}
+
+.my-projects-page .stat-info h4 {
+  color: #bbb;
+  font-size: 1rem;
+  margin-bottom: 6px;
+}
+
+.my-projects-page .stat-info .value {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #a64bf4;
+}
+
+.my-projects-page .stat-icon {
+  font-size: 1.8rem;
+  border-radius: 50%;
+  padding: 12px;
+}
+
+.my-projects-page .stat-icon.clock {
+  background: rgba(166, 75, 244, 0.1);
+  color: #a64bf4;
+}
+
+.my-projects-page .stat-icon.check {
+  background: rgba(77, 245, 155, 0.1);
+  color: #4df59b;
+}
+
+.my-projects-page .stat-icon.dollar {
+  background: rgba(244, 221, 75, 0.1);
+  color: #f4dd4b;
+}
+
+/* === Tabs === */
+.my-projects-page .tabs {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 25px;
+}
+
+.my-projects-page .tab-btn {
+  flex: 1;
+  padding: 12px;
+  border-radius: 10px;
+  border: none;
+  background: #1a1a1a;
+  color: #aaa;
+  cursor: pointer;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.my-projects-page .tab-btn.active {
+  background: linear-gradient(90deg, #a64bf4, #8434e9);
+  color: #fff;
+  box-shadow: 0 0 10px rgba(166, 75, 244, 0.4);
+}
+
+/* === Project Cards === */
+.my-projects-page .project-list {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+
+.my-projects-page .project-card {
+  background: #141416;
+  border-radius: 16px;
+  padding: 22px;
+  box-shadow: 0 0 8px rgba(166, 75, 244, 0.1);
+  border: 1px solid #1f1f1f;
+  transition: all 0.3s ease;
+}
+
+.my-projects-page .project-card:hover {
+  box-shadow: 0 0 20px rgba(166, 75, 244, 0.4);
+  transform: translateY(-4px);
+}
+
+.my-projects-page .project-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.my-projects-page .status {
+  font-size: 0.8rem;
+  padding: 4px 10px;
+  border-radius: 6px;
+  font-weight: 600;
+}
+
+.my-projects-page .status.in-progress {
+  background: rgba(166, 75, 244, 0.15);
+  color: #a64bf4;
+}
+
+.my-projects-page .status.completed {
+  background: rgba(77, 245, 155, 0.15);
+  color: #4df59b;
+}
+
+.my-projects-page .company {
+  color: #aaa;
+  font-size: 0.9rem;
+}
+
+.my-projects-page .desc {
+  color: #ccc;
+  margin: 10px 0;
+  font-size: 0.9rem;
+}
+
+.my-projects-page .details {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  font-size: 0.85rem;
+  color: #aaa;
+  margin-top: 10px;
+}
+
+.my-projects-page .details svg {
+  margin-right: 6px;
+  color: #a64bf4;
+}
+
+.my-projects-page .progress-container {
+  margin-top: 22px;
+}
+
+.my-projects-page .progress-label {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 6px;
+  font-size: 0.9rem;
+  color: #ccc;
+}
+
+.my-projects-page .progress-bar {
+  background: #1a1a1a;
+  height: 12px;
+  border-radius: 8px;
+  overflow: hidden;
+  margin-top: 6px;
+  margin-bottom: 10px;
+}
+
+.my-projects-page .progress-fill {
+  background: linear-gradient(90deg, #a64bf4, #8434e9);
+  height: 100%;
+  border-radius: 8px;
+  transition: width 0.4s ease;
+}
+
+.my-projects-page .progress-value {
+  font-size: 0.85rem;
+  color: #aaa;
+  text-align: right;
+  margin-top: 4px;
+}
+
+/* === Action Buttons === */
+.my-projects-page .actions {
+  margin-top: 20px;
+  display: flex;
+  gap: 10px;
+}
+
+.my-projects-page .view-btn,
+.my-projects-page .submit-btn {
+  padding: 9px 16px;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  font-weight: 500;
+  transition: all 0.3s;
+}
+
+.my-projects-page .view-btn {
+  background: #1a1a1a;
+  color: #fff;
+}
+
+.my-projects-page .submit-btn {
+  background: linear-gradient(90deg, #a64bf4, #8434e9);
+  color: white;
+}
+
+.my-projects-page .submit-btn:hover,
+.my-projects-page .view-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 0 8px rgba(166, 75, 244, 0.4);
+}
+
+/* === Animation === */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.my-projects-page .progress-container {
+  margin-top: 24px;
+}
+
+.my-projects-page .progress-label {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: #ccc;
+  font-size: 0.9rem;
+  margin-bottom: 8px;
+}
+
+.my-projects-page .progress-bar {
+  background: #1a1a1a;
+  height: 12px;
+  border-radius: 6px;
+  overflow: hidden;
+  margin-bottom: 8px;
+}
+
+.my-projects-page .progress-fill {
+  background: linear-gradient(90deg, #a64bf4, #8434e9);
+  height: 100%;
+  border-radius: 6px;
+  transition: width 0.4s ease;
+}
+
+.my-projects-page .progress-value {
+  color: #aaa;
+  font-size: 0.85rem;
+}
+

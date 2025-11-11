@@ -1,0 +1,295 @@
+.profile-page {
+  display: flex;
+  background: #0b0b0d;
+  color: #fff;
+  min-height: 100vh;
+}
+
+.profile-container {
+  flex: 1;
+  padding: 40px;
+}
+
+.page-title {
+  font-size: 1.8rem;
+  font-weight: 700;
+  margin-bottom: 30px;
+}
+
+/* === License Alert === */
+.license-alert {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  background: rgba(255, 165, 0, 0.1);
+  border: 1px solid rgba(255, 165, 0, 0.3);
+  border-radius: 10px;
+  padding: 15px 20px;
+  margin-bottom: 30px;
+}
+
+.alert-icon {
+  color: #ffb74d;
+  font-size: 1.5rem;
+}
+
+.license-alert h4 {
+  margin: 0;
+  color: #ffb74d;
+}
+
+.license-alert p {
+  font-size: 0.9rem;
+  color: #ccc;
+}
+
+.renew-btn {
+  margin-left: auto;
+  background: #a64bf4;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  padding: 8px 14px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.renew-btn:hover {
+  background: #8434e9;
+}
+
+/* === Tabs === */
+.tabs {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 25px;
+}
+
+.tab-btn {
+  flex: 1;
+  background: #1a1a1a;
+  border: none;
+  color: #aaa;
+  font-weight: 500;
+  padding: 12px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.tab-btn.active {
+  background: linear-gradient(90deg, #a64bf4, #8434e9);
+  color: #fff;
+  box-shadow: 0 0 15px rgba(166, 75, 244, 0.4);
+}
+
+/* === Panels === */
+.tab-content {
+  animation: fadeIn 0.4s ease;
+}
+
+.tab-panel {
+  background: #141416;
+  border-radius: 16px;
+  padding: 25px;
+  border: 1px solid #1f1f1f;
+  box-shadow: 0 0 10px rgba(166, 75, 244, 0.1);
+}
+
+.tab-panel h3 {
+  font-size: 1.2rem;
+  margin-bottom: 5px;
+}
+
+.tab-panel p {
+  color: #aaa;
+  margin-bottom: 20px;
+}
+
+/* === Inputs & Sections === */
+.info-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+}
+
+.info-grid input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #2a2a2a;
+  border-radius: 8px;
+  background: #1a1a1a;
+  color: #fff;
+}
+
+.photo-upload {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 25px;
+}
+
+.photo-placeholder {
+  background: #1a1a1a;
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+  font-size: 1.2rem;
+}
+
+.upload-btn {
+  background: #1a1a1a;
+  color: #fff;
+  border: 1px solid #2a2a2a;
+  border-radius: 8px;
+  padding: 8px 14px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* === Professional === */
+.skills span {
+  background: rgba(166, 75, 244, 0.15);
+  color: #a64bf4;
+  padding: 6px 10px;
+  border-radius: 6px;
+  margin: 5px;
+  display: inline-block;
+}
+
+.stats {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 30px;
+  text-align: center;
+}
+
+.stat-item {
+  flex: 1;
+}
+
+.stat-item strong {
+  color: #a64bf4;
+  font-size: 1.2rem;
+}
+
+/* === License & KYC === */
+.license-card {
+  background: #1a1a1a;
+  border-radius: 12px;
+  padding: 20px;
+  margin-bottom: 25px;
+}
+
+.active-status {
+  color: #4df59b;
+  background: rgba(77, 245, 155, 0.1);
+  padding: 4px 10px;
+  border-radius: 6px;
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.warning {
+  color: #ff7043;
+}
+
+.progress-bar {
+  background: #2a2a2a;
+  height: 8px;
+  border-radius: 6px;
+  margin: 8px 0;
+  overflow: hidden;
+}
+
+.progress-fill {
+  background: linear-gradient(90deg, #a64bf4, #8434e9);
+  height: 100%;
+}
+
+.renew-btn-full {
+  width: 100%;
+  padding: 10px;
+  background: linear-gradient(90deg, #a64bf4, #8434e9);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.kyc-section {
+  background: #1a1a1a;
+  border-radius: 12px;
+  padding: 20px;
+}
+
+.kyc-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.kyc-item {
+  background: #141416;
+  padding: 10px;
+  border-radius: 8px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.verified {
+  color: #4df59b;
+  background: rgba(77, 245, 155, 0.1);
+  border-radius: 5px;
+  padding: 3px 8px;
+}
+
+.upload-docs {
+  margin-top: 15px;
+  width: 100%;
+  background: #1a1a1a;
+  color: #fff;
+  border: 1px solid #2a2a2a;
+  border-radius: 8px;
+  padding: 10px;
+  cursor: pointer;
+}
+
+/* === Security === */
+.update-btn {
+  margin-top: 20px;
+  background: linear-gradient(90deg, #a64bf4, #8434e9);
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: 10px 16px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.update-btn:hover {
+  box-shadow: 0 0 8px rgba(166, 75, 244, 0.4);
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

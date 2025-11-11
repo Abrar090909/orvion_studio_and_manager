@@ -20,7 +20,7 @@ export default function Sidebar() {
   return (
     <div className="sidebar">
       <div>
-        <h2 className="logo">Orvion</h2>
+        <h2 className="logo">Orvion Studio</h2>
         <nav>
           {menuItems.map((item) => (
             <a

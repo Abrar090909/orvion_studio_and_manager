@@ -23,7 +23,7 @@ function Signup() {
   return (
     <div className="auth-container">
       <div className="auth-card">
-        <h1 className="auth-title">VendorHub</h1>
+        <h1 className="auth-title">Orvion Studio</h1>
         <p className="auth-subtitle">Create Your Vendor Account</p>
 
         <form onSubmit={handleSubmit} className="auth-form">

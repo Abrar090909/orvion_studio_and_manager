@@ -1,0 +1,136 @@
+.page-container {
+  display: flex;
+  background-color: #0b0b0d;
+  color: #fff;
+  min-height: 100vh;
+}
+
+.available-projects-container {
+  flex: 1;
+  padding: 40px;
+  animation: fadeIn 0.6s ease;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 30px;
+}
+
+.filters {
+  display: flex;
+  gap: 15px;
+}
+
+.search-bar,
+.filter-dropdown {
+  background-color: #151515;
+  border: 1px solid #2a2a2a;
+  color: #fff;
+  padding: 10px 15px;
+  border-radius: 8px;
+  outline: none;
+  transition: all 0.3s ease;
+}
+
+.project-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 25px;
+}
+
+.project-card {
+  background: #141416;
+  border-radius: 16px;
+  padding: 20px;
+  box-shadow: 0 0 10px rgba(166, 75, 244, 0.15);
+  border: 1px solid #1f1f1f;
+  transition: all 0.3s ease;
+}
+
+.project-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 0 25px rgba(166, 75, 244, 0.4);
+}
+
+.urgent-badge {
+  background: crimson;
+  padding: 5px 12px;
+  border-radius: 6px;
+  font-size: 12px;
+  font-weight: 600;
+  float: right;
+}
+
+.company {
+  color: #aaa;
+  font-size: 0.9rem;
+}
+
+.desc {
+  color: #ccc;
+  margin: 10px 0 12px;
+  font-size: 0.9rem;
+}
+
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 15px;
+}
+
+.tag {
+  background: rgba(166, 75, 244, 0.15);
+  color: #a64bf4;
+  padding: 5px 10px;
+  border-radius: 6px;
+  font-size: 12px;
+}
+
+.info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.9rem;
+  margin-top: 10px;
+}
+
+.budget {
+  color: #4df59b;
+  font-weight: 600;
+}
+
+.deadline {
+  color: #aaa;
+}
+
+.grab-btn {
+  width: 100%;
+  background: linear-gradient(90deg, #a64bf4, #8434e9);
+  color: white;
+  border: none;
+  padding: 10px;
+  font-weight: 600;
+  border-radius: 10px;
+  margin-top: 16px;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.grab-btn:hover {
+  background: linear-gradient(90deg, #b469ff, #9e53f3);
+  box-shadow: 0 0 12px rgba(166, 75, 244, 0.5);
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

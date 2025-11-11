@@ -24,7 +24,7 @@ function Login() {
 
   return (
     <div className="auth-container">
-      <h1 className="auth-title">VendorHub</h1>
+      <h1 className="auth-title">Orvion Studio</h1>
       <p className="auth-subtitle">Professional Vendor Management Platform</p>
 
       <div className="auth-box">
