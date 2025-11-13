@@ -1,0 +1,134 @@
+.payments-page {
+  display: flex;
+  background-color: #0b0b0d;
+  color: #fff;
+  min-height: 100vh;
+}
+
+.payments-container {
+  flex: 1;
+  padding: 40px;
+  animation: fadeIn 0.5s ease;
+}
+
+.page-title {
+  font-size: 1.8rem;
+  font-weight: 700;
+  margin-bottom: 30px;
+}
+
+/* Payment Summary Cards */
+.payment-summary-row {
+  display: flex;
+  gap: 25px;
+  margin-bottom: 40px;
+  flex-wrap: wrap;
+}
+
+.payment-box {
+  background: #141416;
+  border-radius: 16px;
+  padding: 22px;
+  flex: 1;
+  min-width: 260px;
+  border: 1px solid #1f1f1f;
+  box-shadow: 0 0 10px rgba(166, 75, 244, 0.1);
+  transition: all 0.3s ease;
+}
+
+.payment-box:hover {
+  box-shadow: 0 0 20px rgba(166, 75, 244, 0.4);
+  transform: translateY(-4px);
+}
+
+.payment-box h4 {
+  color: #bbb;
+  margin-bottom: 8px;
+}
+
+.payment-box .amount {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: #a64bf4;
+}
+
+.status {
+  font-size: 0.85rem;
+  margin-top: 6px;
+  padding: 4px 10px;
+  border-radius: 6px;
+  width: fit-content;
+}
+
+.status.pending {
+  background: rgba(255, 200, 0, 0.1);
+  color: #ffc107;
+}
+
+.status.approved {
+  background: rgba(77, 245, 155, 0.15);
+  color: #4df59b;
+}
+
+.payment-box.total {
+  background: #141416;
+  border: 1px solid #1f1f1f;
+  color: #fff;
+  box-shadow: 0 0 20px rgba(166, 75, 244, 0.15);
+}
+
+
+/* Payment History Table */
+.section-title {
+  font-size: 1.3rem;
+  font-weight: 600;
+  margin-bottom: 15px;
+}
+
+.payment-history {
+  background: #141416;
+  border-radius: 12px;
+  overflow-x: auto;
+  box-shadow: 0 0 10px rgba(166, 75, 244, 0.1);
+  border: 1px solid #1f1f1f;
+}
+
+.payment-history table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.payment-history th,
+.payment-history td {
+  padding: 14px 18px;
+  text-align: left;
+  border-bottom: 1px solid #1f1f1f;
+  color: #ccc;
+}
+
+.payment-history th {
+  color: #a64bf4;
+  font-weight: 600;
+}
+
+.status-badge {
+  padding: 4px 10px;
+  border-radius: 6px;
+  font-size: 0.85rem;
+}
+
+.status-badge.approved {
+  background: rgba(77, 245, 155, 0.15);
+  color: #4df59b;
+}
+
+.status-badge.pending {
+  background: rgba(255, 200, 0, 0.1);
+  color: #ffc107;
+}
+
+/* Animation */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}

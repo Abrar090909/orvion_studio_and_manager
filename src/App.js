@@ -7,6 +7,7 @@ import AvailableProjects from "./pages/AvailableProjects";
 import MyProjects from "./pages/MyProjects";
 import Profile from "./pages/Profile";
 import Notifications from "./pages/Notifications";
+import Payments from "./pages/Payments";
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
         <Route path="/my-projects" element={<MyProjects />} />
         <Route path="/profile" element={<Profile />} />
         <Route path="/notifications" element={<Notifications />} />
+        <Route path="/payments" element={<Payments />} />
       </Routes>
     </Router>
   );
