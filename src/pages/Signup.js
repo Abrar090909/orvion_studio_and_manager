@@ -2,6 +2,10 @@ import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import "../styles/Signup.css";
 
+import { auth, db } from "../firebase";
+import { createUserWithEmailAndPassword } from "firebase/auth";
+import { doc, setDoc } from "firebase/firestore";
+
 function Signup() {
   const navigate = useNavigate();
   const [formData, setFormData] = useState({
@@ -10,14 +14,48 @@ function Signup() {
     password: "",
   });
 
+  const [loading, setLoading] = useState(false);
+
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log("User signed up:", formData);
-    navigate("/dashboard");
+    setLoading(true);
+
+    console.log("Signup started…");
+
+    try {
+      // ---------- AUTH ----------
+      const userCred = await createUserWithEmailAndPassword(
+        auth,
+        formData.email,
+        formData.password
+      );
+
+      console.log("Auth created:", userCred.user.uid);
+
+      // ---------- FIRESTORE ----------
+      await setDoc(doc(db, "users", userCred.user.uid), {
+        name: formData.name,
+        email: formData.email,
+        createdAt: new Date(),
+        role: "vendor",
+        earnings: 0,
+      });
+
+      console.log("Firestore saved:", userCred.user.uid);
+
+      // ---------- SUCCESS ----------
+      alert("Account created successfully!");
+      navigate("/login");
+    } catch (err) {
+      console.error("Signup error:", err);
+      alert(err.message);
+    }
+
+    setLoading(false);
   };
 
   return (
@@ -35,6 +73,7 @@ function Signup() {
             onChange={handleChange}
             required
           />
+
           <input
             type="email"
             name="email"
@@ -43,6 +82,7 @@ function Signup() {
             onChange={handleChange}
             required
           />
+
           <input
             type="password"
             name="password"
@@ -52,8 +92,8 @@ function Signup() {
             required
           />
 
-          <button type="submit" className="auth-btn">
-            Sign Up
+          <button type="submit" className="auth-btn" disabled={loading}>
+            {loading ? "Creating..." : "Sign Up"}
           </button>
         </form>
 
@@ -61,9 +101,7 @@ function Signup() {
           Already have an account? <Link to="/login">Log in</Link>
         </p>
 
-        <Link to="/" className="back-link">
-          ← Back to Landing
-        </Link>
+        <Link to="/" className="back-link">← Back to Landing</Link>
       </div>
     </div>
   );

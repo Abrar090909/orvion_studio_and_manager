@@ -2,6 +2,9 @@ import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import "../styles/App.css";
 
+import { auth } from "../firebase";
+import { signInWithEmailAndPassword } from "firebase/auth";
+
 function Login() {
   const navigate = useNavigate();
   const [credentials, setCredentials] = useState({
@@ -9,17 +12,30 @@ function Login() {
     password: "",
   });
 
+  const [loading, setLoading] = useState(false);
+
   const handleChange = (e) => {
     setCredentials({ ...credentials, [e.target.name]: e.target.value });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
+    setLoading(true);
 
-    console.log("User logged in:", credentials);
+    try {
+      await signInWithEmailAndPassword(
+        auth,
+        credentials.email,
+        credentials.password
+      );
 
-    // Redirect to dashboard after login
-    navigate("/dashboard");
+      alert("Logged in successfully!");
+      navigate("/dashboard");
+    } catch (err) {
+      alert(err.message);
+    }
+
+    setLoading(false);
   };
 
   return (
@@ -57,8 +73,8 @@ function Login() {
 
           <p className="forgot">Forgot Password?</p>
 
-          <button type="submit" className="auth-btn">
-            Sign In
+          <button type="submit" className="auth-btn" disabled={loading}>
+            {loading ? "Signing in..." : "Sign In"}
           </button>
         </form>
 
@@ -66,9 +82,7 @@ function Login() {
           Don’t have an account? <Link to="/signup">Sign Up</Link>
         </p>
 
-        <Link to="/" className="back-link">
-          ← Back to Landing
-        </Link>
+        <Link to="/" className="back-link">← Back to Landing</Link>
       </div>
     </div>
   );
