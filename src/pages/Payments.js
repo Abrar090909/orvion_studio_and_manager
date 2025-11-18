@@ -49,7 +49,8 @@ function Payments() {
       <Sidebar />
       <div className="payments-container">
         <h2 className="page-title">Payments Overview</h2>
-
+        {loading && <p className="loading">Loading payments…</p>}
+        {error && <p className="error">{error}</p>}
         <div className="payment-summary-row">
           <div className="payment-box">
             <h4>Ongoing QA</h4>

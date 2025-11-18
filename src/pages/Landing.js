@@ -53,7 +53,7 @@ function Landing() {
       setCurrent((prev) => (prev + 1) % testimonials.length);
     }, 4000);
     return () => clearInterval(interval);
-  }, []);
+  }, [testimonials.length]);
 
   // NAV ACTIVE STATE
   useEffect(() => {

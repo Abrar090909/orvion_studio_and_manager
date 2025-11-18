@@ -52,7 +52,7 @@ export const fetchPaymentsFromSheets = async () => {
     for (const row of data.values) {
       const project = row[0] || "";
       const date = row[1] || "";
-      const amount = parseFloat((row[2] || "").toString().replace(/[^0-9.\-]/g, "")) || 0;
+      const amount = parseFloat((row[2] || "").toString().replace(/[^0-9.-]/g, "")) || 0;
       const status = (row[3] || "").toString();
       const email = row[4] || "";
 
