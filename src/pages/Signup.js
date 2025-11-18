@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
+import { FaEye, FaEyeSlash } from "react-icons/fa";
 import "../styles/Signup.css";
 
 import { auth, db } from "../firebase";
@@ -15,6 +16,8 @@ function Signup() {
   });
 
   const [loading, setLoading] = useState(false);
+  const [showPassword, setShowPassword] = useState(false);
+  const [passwordError, setPasswordError] = useState("");
 
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -24,7 +27,15 @@ function Signup() {
     e.preventDefault();
     setLoading(true);
 
-    // Signup started
+    // Validate strong password: min 8 chars, 1 upper, 1 lower, 1 number, 1 special
+    const pwd = formData.password || "";
+    const strongPwdRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[^A-Za-z0-9]).{8,}$/;
+    if (!strongPwdRegex.test(pwd)) {
+      setPasswordError("Password must be at least 8 characters and include uppercase, lowercase, number and special character.");
+      setLoading(false);
+      return;
+    }
+    setPasswordError("");
 
     try {
       // ---------- AUTH ----------
@@ -82,14 +93,26 @@ function Signup() {
             required
           />
 
-          <input
-            type="password"
-            name="password"
-            placeholder="Password"
-            value={formData.password}
-            onChange={handleChange}
-            required
-          />
+          <div className="password-field">
+            <input
+              type={showPassword ? "text" : "password"}
+              name="password"
+              placeholder="Password"
+              value={formData.password}
+              onChange={handleChange}
+              required
+              aria-describedby="passwordHelp"
+            />
+            <button
+              type="button"
+              className="password-toggle"
+              onClick={() => setShowPassword((s) => !s)}
+              aria-label={showPassword ? "Hide password" : "Show password"}
+            >
+              {showPassword ? <FaEyeSlash aria-hidden /> : <FaEye aria-hidden />}
+            </button>
+          </div>
+          {passwordError && <p id="passwordHelp" className="field-error">{passwordError}</p>}
 
           <button type="submit" className="auth-btn" disabled={loading}>
             {loading ? "Creating..." : "Sign Up"}
