@@ -26,7 +26,6 @@ function Payments() {
         }
       } catch (err) {
         setError("Error fetching payments");
-        console.error(err);
       } finally {
         setLoading(false);
       }

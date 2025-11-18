@@ -1,5 +1,5 @@
 import React from "react";
-import { FaTachometerAlt, FaFolderOpen, FaClipboardList, FaUser, FaBell, FaCreditCard } from "react-icons/fa";
+import { FaTachometerAlt, FaFolderOpen, FaClipboardList, FaUser, FaCreditCard } from "react-icons/fa";
 import { useLocation } from "react-router-dom";
 import "../styles/Dashboard.css";
 
@@ -14,7 +14,6 @@ export default function Sidebar() {
     { name: "Available Projects", icon: <FaFolderOpen />, path: "/projects" },
     { name: "My Projects", icon: <FaClipboardList />, path: "/my-projects" },
     { name: "Profile", icon: <FaUser />, path: "/profile" },
-    { name: "Notifications", icon: <FaBell />, path: "/notifications" },
     { name: "Payments", icon: <FaCreditCard />, path: "/payments"}
   ];
 

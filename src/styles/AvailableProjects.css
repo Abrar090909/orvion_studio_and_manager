@@ -134,3 +134,24 @@
     transform: translateY(0);
   }
 }
+.ap-container {
+  padding: 40px;
+  color: #fff;
+  text-align: center;
+}
+
+.ap-btn {
+  padding: 12px 24px;
+  background: #0ea5e9;
+  color: #000;
+  border-radius: 10px;
+  display: inline-block;
+  margin-top: 20px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: transform .2s ease;
+}
+
+.ap-btn:hover {
+  transform: translateY(-3px);
+}

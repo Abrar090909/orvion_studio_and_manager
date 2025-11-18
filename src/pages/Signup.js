@@ -24,7 +24,7 @@ function Signup() {
     e.preventDefault();
     setLoading(true);
 
-    console.log("Signup started…");
+    // Signup started
 
     try {
       // ---------- AUTH ----------
@@ -34,7 +34,7 @@ function Signup() {
         formData.password
       );
 
-      console.log("Auth created:", userCred.user.uid);
+      // Auth created
 
       // ---------- FIRESTORE ----------
       await setDoc(doc(db, "users", userCred.user.uid), {
@@ -45,13 +45,12 @@ function Signup() {
         earnings: 0,
       });
 
-      console.log("Firestore saved:", userCred.user.uid);
+      // Firestore saved
 
       // ---------- SUCCESS ----------
       alert("Account created successfully!");
       navigate("/login");
     } catch (err) {
-      console.error("Signup error:", err);
       alert(err.message);
     }
 

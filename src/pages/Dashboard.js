@@ -18,9 +18,9 @@ function Dashboard() {
         <div className="dashboard-content">
           <div className="stats-grid">
             <StatCard title="Total Earnings" value="$12,450" change="+12.5% from last month" icon={<FaDollarSign />} color="#4ade80" />
-            <StatCard title="Active Projects" value="8" change="+2 from last month" icon={<FaClock />} color="#60a5fa" />
-            <StatCard title="Completed Projects" value="24" change="+4 from last month" icon={<FaCheckCircle />} color="#34d399" />
-            <StatCard title="Success Rate" value="96%" change="+2% from last month" icon={<FaArrowUp />} color="#a78bfa" />
+            <StatCard title="Active Projects" value="1" change="" icon={<FaClock />} color="#60a5fa" />
+            <StatCard title="Completed Projects" value="1" change="" icon={<FaCheckCircle />} color="#34d399" />
+            <StatCard title="Success Rate" value="Null" change="" icon={<FaArrowUp />} color="#a78bfa" />
           </div>
 
           <div className="dashboard-sections">

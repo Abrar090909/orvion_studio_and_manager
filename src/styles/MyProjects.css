@@ -283,3 +283,24 @@
   font-size: 0.85rem;
 }
 
+.mp-container {
+  padding: 40px;
+  color: #fff;
+  text-align: center;
+}
+
+.mp-btn {
+  padding: 12px 24px;
+  background: #a855f7;
+  color: #000;
+  border-radius: 10px;
+  display: inline-block;
+  margin-top: 20px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: transform .2s ease;
+}
+
+.mp-btn:hover {
+  transform: translateY(-3px);
+}

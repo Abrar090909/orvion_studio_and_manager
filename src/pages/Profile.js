@@ -51,12 +51,6 @@ function Profile() {
           >
             <FaIdCard /> License & KYC
           </button>
-          <button
-            className={`tab-btn ${activeTab === "security" ? "active" : ""}`}
-            onClick={() => setActiveTab("security")}
-          >
-            <FaLock /> Security
-          </button>
         </div>
 
         {/* Tab Content */}
@@ -186,29 +180,6 @@ function Profile() {
                   <FaUpload /> Upload Additional Documents
                 </button>
               </div>
-            </div>
-          )}
-
-          {activeTab === "security" && (
-            <div className="tab-panel">
-              <h3>Security Settings</h3>
-              <p>Manage your account security and password</p>
-
-              <div className="info-grid">
-                <div>
-                  <label>Current Password</label>
-                  <input type="password" placeholder="Enter current password" />
-                </div>
-                <div>
-                  <label>New Password</label>
-                  <input type="password" placeholder="Enter new password" />
-                </div>
-                <div>
-                  <label>Confirm New Password</label>
-                  <input type="password" placeholder="Confirm new password" />
-                </div>
-              </div>
-              <button className="update-btn">Update Password</button>
             </div>
           )}
         </div>

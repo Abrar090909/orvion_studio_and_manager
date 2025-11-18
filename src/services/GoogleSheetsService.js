@@ -7,7 +7,7 @@ export const fetchPaymentsFromSheets = async () => {
     const GOOGLE_API_KEY = process.env.REACT_APP_GOOGLE_API_KEY;
 
     if (!GOOGLE_SHEET_ID || !GOOGLE_API_KEY) {
-      console.warn("Google Sheets credentials not configured in .env file");
+      // Credentials not configured in local .env — skip fetching in this environment
       return null;
     }
 
@@ -21,7 +21,7 @@ export const fetchPaymentsFromSheets = async () => {
     if (!response.ok) {
       // Return empty data for invalid range (sheet not yet created)
       if (response.status === 400) {
-        console.warn("Google Sheets API returned 400 - sheet or range may be missing");
+        // API returned 400 — sheet or range may be missing; return empty dataset
         return {
           qaTesting: 0,
           postQA: 0,
@@ -35,7 +35,6 @@ export const fetchPaymentsFromSheets = async () => {
     const data = await response.json();
 
     if (!data.values || data.values.length === 0) {
-      console.log("No data found in Google Sheet");
       return {
         qaTesting: 0,
         postQA: 0,
@@ -77,7 +76,7 @@ export const fetchPaymentsFromSheets = async () => {
       history,
     };
   } catch (error) {
-    console.error("Error fetching from Google Sheets:", error);
+    // Swallow errors for client-side public-sheet fetches; return null so caller can handle it
     return null;
   }
 };

@@ -1,28 +1,31 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 import { FaFolderOpen, FaUpload, FaMoneyCheckAlt, FaUserCog } from "react-icons/fa";
 import "../styles/Dashboard.css";
 
 export default function QuickActions() {
+  const navigate = useNavigate();
+
   const actions = [
     {
       label: "Browse Available Projects",
       icon: <FaFolderOpen />,
-      onClick: () => alert("Browse Available Projects clicked"),
+      onClick: () => navigate("/projects"),
     },
     {
       label: "Submit Project Delivery",
       icon: <FaUpload />,
-      onClick: () => alert("Submit Project Delivery clicked"),
+      onClick: () => navigate("/my-projects"),
     },
     {
       label: "View Payment History",
       icon: <FaMoneyCheckAlt />,
-      onClick: () => alert("View Payment History clicked"),
+      onClick: () => navigate("/payments"),
     },
     {
       label: "Update Profile Information",
       icon: <FaUserCog />,
-      onClick: () => alert("Update Profile Information clicked"),
+      onClick: () => navigate("/profile"),
     },
   ];
 
