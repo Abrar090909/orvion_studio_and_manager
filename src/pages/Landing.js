@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import "../styles/Landing.css";
 
 // ================= HOOK OUTSIDE COMPONENT =================
@@ -104,8 +105,8 @@ function Landing() {
 
           <div className="landing-nav-cta">
             <button className="landing-btn-ghost">See Demo</button>
-            <a href="/signin" className="landing-link-signin">Sign in</a>
-            <a href="/signup" className="landing-btn-gradient">Get started</a>
+            <Link to="/login" className="landing-link-signin">Sign in</Link>
+            <Link to="/signup" className="landing-btn-gradient">Get started</Link>
 
             <button className="landing-burger" onClick={() => setNavOpen((s) => !s)}>
               <span></span><span></span><span></span>
@@ -247,13 +248,13 @@ function Landing() {
                     <div>{i + 1} days</div>
                   </div>
 
-                  <button className="landing-btn-card">Grab Project</button>
+                  <Link to="/login" className="landing-btn-card">Grab Project</Link>
                 </div>
               ))}
             </div>
 
             <div className="landing-more-projects">
-              <button className="landing-btn-more">View all projects</button>
+              <Link to="/login" className="landing-btn-more">View all projects</Link>
             </div>
           </div>
         </section>
