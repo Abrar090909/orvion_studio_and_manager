@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import { FaEye, FaEyeSlash } from "react-icons/fa";
+import { FiEye, FiEyeOff } from "react-icons/fi";
 import "../styles/Signup.css";
 
 import { auth, db } from "../firebase";
@@ -109,7 +109,7 @@ function Signup() {
               onClick={() => setShowPassword((s) => !s)}
               aria-label={showPassword ? "Hide password" : "Show password"}
             >
-              {showPassword ? <FaEyeSlash aria-hidden /> : <FaEye aria-hidden />}
+              {showPassword ? <FiEyeOff aria-hidden /> : <FiEye aria-hidden />}
             </button>
           </div>
           {passwordError && <p id="passwordHelp" className="field-error">{passwordError}</p>}
